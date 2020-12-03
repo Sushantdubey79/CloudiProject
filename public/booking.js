@@ -1,72 +1,35 @@
-/*const hover = require("../views/hover");
 
-    
-    (function() {     // function expression closure to contain variables
-        var i = 0;
-        var pics = [ "hill.jpg" , "story.jpg" ];
-        var el = document.getElementById('img_to_flip');  // el doesn't change
-        function toggle() {
-            el.src = pics[i];           // set the image
-            i = (i + 1) % pics.length;  // update the counter
-        pics[i].fadeOut();
+      
+        var slideCount = document.querySelectorAll('.slider .slide-item').length;
+        var slideWidth = document.querySelectorAll('.slider-outer')[0].offsetWidth;
+        var slideHeight = document.querySelectorAll(".slider-outer")[0].offsetHeight;
+        
+        var sliderUlWidth = slideCount * slideWidth;
+        document.querySelectorAll('.slider')[0].style.cssText = "width:" + sliderUlWidth + "px";
+        
+        for (var i = 0; i < slideCount; i++) {
+          document.querySelectorAll('.slide-item')[i].style.cssText = "width:" + slideWidth + "px;height:" + slideHeight + "px";
+        }
+        
+        setInterval(function() {
+          moveRight();
+        }, 3000);
+        var counter = 1;
+        
+        function moveRight() {
+          var slideNum = counter++
+            if (slideNum < slideCount) {
+              var transformSize = slideWidth * slideNum;
+              document.querySelectorAll('.slider')[0].style.cssText = 
+                "width:" + sliderUlWidth + "px; -webkit-transition:all 800ms ease; -webkit-transform:translate3d(-" + transformSize + "px, 0px, 0px);-moz-transition:all 800ms ease; -moz-transform:translate3d(-" + transformSize + "px, 0px, 0px);-o-transition:all 800ms ease; -o-transform:translate3d(-" + transformSize + "px, 0px, 0px);transition:all 800ms ease; transform:translate3d(-" + transformSize + "px, 0px, 0px)";
+        
+            } else {
+              counter = 1;
+              document.querySelectorAll('.slider')[0].style.cssText = "width:" + sliderUlWidth + "px;-webkit-transition:all 800ms ease; -webkit-transform:translate3d(0px, 0px, 0px);-moz-transition:all 800ms ease; -moz-transform:translate3d(0px, 0px, 0px);-o-transition:all 800ms ease; -o-transform:translate3d(0px, 0px, 0px);transition:all 800ms ease; transform:translate3d(0px, 0px, 0px)";
+            }
         
         }
-        setInterval(toggle, 2000);
-    })();*/   
-
-  /*  var myAnimation =  new hoverEffect({
-        parent: document.querySelector('.bg'),
-        intensity: 0.3,
-        image1: './2.jpg',
-        image2: './4.jpg',
-        displacementImage: './strip.png'
-    });
-
-var bgImageArray = ["/22.jpg", "/33.jpg", "/banaras1.jpg"],
-base = "/11.jpg",
-secs = 4;
-bgImageArray.forEach(function(img){
-    new Image().src = base + img; 
-    // caches images, avoiding white flash between background replacements
-});
-
-function backgroundSequence() {
-    window.clearTimeout();
-    var k = 0;
-    for (i = 0; i < bgImageArray.length; i++) {
-        setTimeout(function(){ 
-            document.getElementById('bg').style.background = "url(" + base + bgImageArray[k] + ") no-repeat center center";
-            document.getElementById('bg').style.backgroundSize ="cover";
-        if ((k + 1) === bgImageArray.length) { setTimeout(function() { backgroundSequence() }, (secs * 1000))} else { k++; }            
-        }, (secs * 1000) * i)   
-    }
-}
-backgroundSequence();*/
-/*
-const restinfoimg = document.querySelector(".rest-info-img");
-const carimg = document.querySelector(".rest-info-img img");
-
-const preB = document.querySelector("#prevBtn");
-const nexB = document.querySelector("#nextBtn");
-
-let counter = 1;
-const size = carimg[0].clientWidth;
-
-restinfoimg.style.transform = 'translateX(' + (-size * counter) + 'px)';
-
-nexB.addEventListener('click', function(){
-
-    restinfoimg.style.transition = "transform 0.4s ease-in-out";
-    counter++;
-restinfoimg.style.transform = 'translateX(' + (-size * counter) + 'px)';
-})
-
-
-preB.addEventListener('click', function() {
-    restinfoimg.style.transition = "transform 0.4s ease-in-out";
-    counter--;
-    restinfoimg.style.transform = 'translateX(' + (-size * counter) + 'px)';
-})*/
+        
 
 
 
@@ -76,11 +39,43 @@ preB.addEventListener('click', function() {
 
 
 
+        $('#welcome li:nth-of-type(5) a').mouseenter(function(){
 
-
-
-
-
+            $('#welcome li:nth-of-type(5) a').css('color','black');
+    
+        })
+    
+    
+    
+        $('#welcome li:nth-of-type(5) ').mouseenter(function(){
+    
+            $('#welcome li:nth-of-type(5) a').css('color','black');
+    
+        })
+    
+        
+        $('#welcome').mouseenter(function(){
+    
+            $('#welcome li:nth-of-type(5) a').css('color','rgba(255,255,255,0.8)');
+    
+        })
+    
+        
+        
+        $('#welcome').mouseout(function(){
+    
+            $('#welcome li:nth-of-type(5) a').css('color','rgba(255,255,255,0.8)');
+    
+        })
+    
+    
+        $('#welcome li:nth-of-type(5) a').mouseout(function(){
+    
+            $('#welcome li:nth-of-type(5) a').css('color','black');
+    
+        })
+    
+        
 
 
 

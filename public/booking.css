@@ -2,12 +2,11 @@
     margin: 0;
     padding: 0;
 }
-
 body{
     width: 100%;
-    
-    
+    padding-top: 50px;
 }   
+
 
 .splide__slide img{
     width: 70vw;
@@ -31,14 +30,6 @@ position: relative;
 margin: 0 auto;
 }
 
-.pos-f-t .navbar-expand-lg #nav{
-    margin: 0;
-    padding: 0;
-}
-
-.pos-f-t .navbar-expand-lg .navbar-collapse{
-     
-}
 
 #search{
     float: right;
@@ -231,7 +222,6 @@ color: white;
 
 h1{
     text-align: center;
-    font-family: 'Montez',cursive;
 }
 
 
@@ -389,13 +379,50 @@ transition: color .5s;
 
 
 
+.navbar-header{
+    display: inline;
+}
+
+@media screen and (min-width:700px){
+    .navbar-expand-lg {
+        height: 80px;
+    }
+    body{
+        padding-top: 80px;
+    }
+    #welcome .navbar-expand-lg li:nth-child(1), #welcome .navbar-expand-lg li:nth-child(2), #welcome .navbar-expand-lg li:nth-child(3), #welcome .navbar-expand-lg li:nth-child(4){
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width:700px){
+   
+   
+    .container-fluid .navbar-header{
+        text-align: center;
+    }
+
+.container-fluid #nav2{
+    text-align: center;
+}
+
+}
 
 
+@media screen and (max-width:700px){
+   
+   #navbarTogglerDemo01 ul li{
+       display: flex;
+       flex-direction: column;
+   }
+   
 
-
-
-
-
+    #navbarTogglerDemo01 .navbar-nav .nav-item{
+        margin: 0;
+        padding:0;
+    }
+  
+}
 
 
 @media screen and (max-width:900px){
@@ -464,6 +491,9 @@ transition: color .5s;
     }
 }
 
+html {
+    scroll-behavior: smooth;
+  }
 
 
 

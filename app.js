@@ -48,9 +48,7 @@ mongoose.connect(dbURL, {
 .catch(error => console.log(error.message));
 
 
-var j;
-console.log(User._id) 
-   
+var j; 
 const MongoStore = require('connect-mongo')(session);
 
 app.use(session({
@@ -155,8 +153,6 @@ Hotel.create({
         console.log(hotel)
     }
 });*/
-
-
 
 app.get("/hotels/newHotel", isLoggedIn ,function(req,res){
     res.render("new")
@@ -267,7 +263,6 @@ app.get("/hotels/:id/edit" , checkHotelOwnership ,function(req,res){
 
 //Update  Route
 app.put("/hotels/:id",checkHotelOwnership, upload.array('image')  ,function(req,res){
-console.log(req.files)
 Hotel.findByIdAndUpdate(req.params.id,req.body.hotel,function(err,updateHotel){
     if(err){
         console.log(err)
@@ -316,7 +311,6 @@ app.post('/hotels/:id/payment', function(req, res){
     data = roomdata;
     const room = roomdata.Rooms;
     const amount = req.body.price;
-    console.log(data);
     User.findById(j, (err,hotel)=>{
         hotel.booked.push({_id:id,rooms:room});
         hotel.save();
@@ -325,9 +319,6 @@ app.post('/hotels/:id/payment', function(req, res){
     
     Hotel.findById( id , (err,hotels)=>{
         n = hotels;
-        console.log(n)
-        console.log(hotels)
-        console.log(hotels.Notbooked)
         const index = hotels.Notbooked.indexOf(room);
         hotels.Notbooked.splice(index,1);
         hotels.booked.push(Number(room));
@@ -383,7 +374,6 @@ app.post("/hotels/:id/reviews",function(req,res){
         }else{
             const review = new Review(req.body.review)
             review.author.username = req.user.username;
-            console.log(review.author.username)
             hotel.reviews.push(review)
            
             review.save()
@@ -515,8 +505,6 @@ app.post("/register",async function(req,res){
     if(req.body.adminCode == 'secretcode123'){
         newUser.isAdmin = true;
     }
-    console.log(newUser.isAdmin)
-    console.log(req.body.adminCode)
 	User.register(newUser ,req.body.password ,async function(err,user){
 		if(err){
 			req.flash("error",err.message)
@@ -728,8 +716,8 @@ app.get("/logout",function(req,res){
 
 
 
+const port = process.env.PORT || 3000
 
-
-app.listen("3000" , function(req,res){
-    console.log("Banaras is running!!")
+app.listen(port , function(req,res){
+    console.log(`Banaras is running!! on ${port}`)
 })
