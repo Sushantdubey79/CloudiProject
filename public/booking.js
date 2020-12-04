@@ -39,7 +39,7 @@
 
 
 
-        $('#welcome li:nth-of-type(5) a').mouseenter(function(){
+        $('#welcome li:nth-of-type(5) li').mouseenter(function(){
 
             $('#welcome li:nth-of-type(5) a').css('color','black');
     

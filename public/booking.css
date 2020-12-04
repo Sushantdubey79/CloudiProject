@@ -12,6 +12,27 @@ body{
     width: 70vw;
 }
 
+@media screen and (max-width:700px){
+.slider-outer{
+width: 100vw;
+height: 100vh;
+}
+
+.splide__slide img{
+    width: 100vw;
+    height: 100vh;
+}
+.splide__track{
+    width: 100vw;
+    height: 100vh;
+}
+footer{
+    width: 100vw;
+    height: fit-content;
+}
+}
+
+
 .container header .jumbotron{
     width: 100%;
     background-image: url("back2.jpg");
@@ -216,6 +237,9 @@ color: white;
 .navbar-brand{
 
     margin-left: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
