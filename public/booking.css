@@ -235,11 +235,7 @@ color: white;
 
     }
 .navbar-brand{
-
     margin-left: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 
@@ -421,8 +417,9 @@ transition: color .5s;
     #welcome .navbar-expand-lg li:nth-child(1), #welcome .navbar-expand-lg li:nth-child(2), #welcome .navbar-expand-lg li:nth-child(3), #welcome .navbar-expand-lg li:nth-child(4){
         visibility: hidden;
     }
-}
+    
 
+}
 @media screen and (max-width:700px){
    
    
@@ -432,6 +429,11 @@ transition: color .5s;
 
 .container-fluid #nav2{
     text-align: center;
+}
+.navbar-brand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 }
